@@ -1,0 +1,157 @@
+object fMain: TfMain
+  Left = 307
+  Height = 480
+  Top = 120
+  Width = 800
+  Caption = 'Duplicate Files'
+  ClientHeight = 460
+  ClientWidth = 800
+  Menu = mmMain
+  Position = poScreenCenter
+  LCLVersion = '1.6.4.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 437
+    Width = 800
+    Panels = <    
+      item
+        Text = 'ready'
+        Width = 150
+      end    
+      item
+        Text = '0 files found'
+        Width = 150
+      end    
+      item
+        Width = 150
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object lvFiles: TListView
+    Left = 0
+    Height = 437
+    Top = 0
+    Width = 800
+    Align = alClient
+    Checkboxes = True
+    Columns = <    
+      item
+        AutoSize = True
+        Caption = 'Name'
+        Width = 47
+      end    
+      item
+        AutoSize = True
+        Caption = 'CRC'
+        Width = 38
+      end    
+      item
+        Alignment = taRightJustify
+        AutoSize = True
+        Caption = 'Size'
+        Width = 35
+      end    
+      item
+        AutoSize = True
+        Caption = 'Ext'
+        Width = 30
+      end    
+      item
+        AutoSize = True
+        Caption = 'Last modified'
+        Width = 87
+      end    
+      item
+        AutoSize = True
+        Caption = 'Path'
+        Width = 39
+      end>
+    HideSelection = False
+    PopupMenu = pmFiles
+    ReadOnly = True
+    RowSelect = True
+    ScrollBars = ssAutoBoth
+    SortColumn = 0
+    SortType = stBoth
+    TabOrder = 1
+    ViewStyle = vsReport
+    OnDblClick = miFileOpenClick
+  end
+  object mmMain: TMainMenu
+    OnChange = mmMainChange
+    left = 112
+    top = 96
+    object miFile: TMenuItem
+      Caption = '&File'
+      object miFileSearch: TMenuItem
+        Caption = '&Search duplicate files...'
+        OnClick = miFileSearchClick
+      end
+      object miFileClear: TMenuItem
+        Caption = '&Clear search list'
+        OnClick = miFileClearClick
+      end
+      object MenuItem1: TMenuItem
+        Caption = '-'
+      end
+      object miFileDeleteChecked: TMenuItem
+        Caption = '&Delete selected files'
+        OnClick = miFileDeleteCheckedClick
+      end
+    end
+    object miTools: TMenuItem
+      Caption = '&Tools'
+      object miToolsOptions: TMenuItem
+        Caption = '&Options'
+        OnClick = miToolsOptionsClick
+      end
+    end
+    object miHelp: TMenuItem
+      Caption = '&Help'
+      object miHelpAbout: TMenuItem
+        Caption = '&About...'
+        OnClick = miHelpAboutClick
+      end
+    end
+  end
+  object sdFileSearch: TSelectDirectoryDialog
+    left = 200
+    top = 96
+  end
+  object pmFiles: TPopupMenu
+    OnPopup = pmFilesPopup
+    left = 376
+    top = 104
+    object miFileOpen: TMenuItem
+      Caption = 'Open &File'
+      Default = True
+      OnClick = miFileOpenClick
+    end
+    object miFilePath: TMenuItem
+      Caption = 'Open &Path'
+      OnClick = miFilePathClick
+    end
+    object MenuItem4: TMenuItem
+      Caption = '-'
+    end
+    object miFileCopy: TMenuItem
+      Caption = '&Copy to...'
+    end
+    object miFileMove: TMenuItem
+      Caption = '&Move to...'
+    end
+    object miFileDeleteSelected: TMenuItem
+      Caption = '&Delete file'
+    end
+    object MenuItem8: TMenuItem
+      Caption = '-'
+    end
+    object miFileProperties: TMenuItem
+      Caption = 'P&roperties'
+    end
+  end
+end

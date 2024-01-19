@@ -1,0 +1,57 @@
+object fOptions: TfOptions
+  Left = 1418
+  Height = 108
+  Top = 32
+  Width = 455
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Options'
+  ClientHeight = 108
+  ClientWidth = 455
+  Position = poMainFormCenter
+  SessionProperties = 'coFilesType.Text'
+  LCLVersion = '1.6.4.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 68
+    Width = 443
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 0
+    ShowButtons = [pbClose]
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 8
+    Width = 49
+    Caption = 'Files type'
+    ParentColor = False
+  end
+  object coFilesType: TComboBox
+    Left = 16
+    Height = 23
+    Top = 24
+    Width = 424
+    ItemHeight = 15
+    ItemIndex = 1
+    Items.Strings = (
+      '.*'
+      '.jpg.bmp.tif'
+    )
+    TabOrder = 1
+    Text = '.jpg.bmp.tif'
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    left = 224
+    top = 32
+  end
+end
